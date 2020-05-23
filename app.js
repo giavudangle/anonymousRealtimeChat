@@ -12,7 +12,7 @@ const http = require("http").Server(app);
 // require the socket.io module
 const io = require("socket.io");
 
-const port = 5000;
+const port = 3000;
 
 //bodyparser middleware
 app.use(bodyParser.json());
@@ -35,7 +35,7 @@ const connect = require("./dbconnect");
 socket.on("connection", socket => {
   console.log("user connected");
 
-  socket.on("disconnect", function() {
+  socket.on("disconnect", function () {
     console.log("user disconnected");
   });
 
@@ -52,7 +52,21 @@ socket.on("connection", socket => {
     socket.broadcast.emit("notifyStopTyping");
   });
 
-  socket.on("chat message", function(msg) {
+  socket.on('disconnect', () => {
+    var MongoClient = require('mongodb').MongoClient;
+    var url = "mongodb://localhost:27017/";
+
+    MongoClient.connect(url, function (err, db) {
+      var dbo = db.db("chat");
+      dbo.collection("thechats").drop(function (err, delOK) {
+        if (err) throw err;
+        if (delOK) console.log("Collection deleted");
+        db.close();
+      });
+    });
+  })
+
+  socket.on("chat message", function (msg) {
     console.log("message: " + msg);
 
     //broadcast message to everyone in port:5000 except yourself.
