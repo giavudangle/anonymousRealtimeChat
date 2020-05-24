@@ -1,20 +1,20 @@
-# Anonymous Real-time Chat
+# Anonymous Real-time Chat demo Socket.io
 
 ## Introduction
 
-> This is anonymous chat app was created for a tutorial about Nodejs, Express, and Socket.io and MongoDB.
+> This is anonymous chat app was created use Nodejs, Express, and Socket.io and MongoDB.
 
-You should have a good understanding of how socket.io works at the end of this tutorial or after taking a look at the code.
+You should have a good understanding of how socket.io works at the end of this repo or after taking a look at the code.
 
 You will also learn how to show that someone is typing in a chat application.
 
 Here is a screenshot of it looks and functionality.
 
-![alt text](https://github.com/rexeze/anonymouse-realtime-chat-app/blob/master/screenshots/chatscreenshot.gif "Chat Screen Shot")
+![alt text](https://github.com/giavudangle/anonymousRealtimeChat/blob/master/screenshots/chatscreenshot.gif")
 
 ## Code Samples
 
-> Backend
+> Backend 
 
 ```javascript
 //integrating socketio
@@ -76,7 +76,7 @@ socket.on("connection", socket => {
 > Clone this repository and run
 
 ```bash
-npm install
+npm install 
 
 ```
 
@@ -88,8 +88,14 @@ npm start
 
 goto your browser
 
-and visit localhost:5000 and start chatting.
+and visit localhost:3000 and start chatting.
 
 Note:
 
 You should have mongoDB installed and started for this application to work correctly.
+If you want to demo-deploy try to use NGROK to map localhost -> public link .
+
+In package.json add a script
+```
+ "server": " ngrok http 3000"
+```
