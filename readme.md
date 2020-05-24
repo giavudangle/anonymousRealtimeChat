@@ -10,7 +10,7 @@ You will also learn how to show that someone is typing in a chat application.
 
 Here is a screenshot of it looks and functionality.
 
-![alt text](https://github.com/giavudangle/anonymousRealtimeChat/blob/master/screenshots/chatscreenshot.gif "Chat Screen Shot")
+![alt text](https://github.com/giavudangle/anonymousRealtimeChat/blob/master/screenshots/132.gif "Chat Screen Shot")
 ## Code Samples
 
 > Backend 
